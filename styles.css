@@ -1236,8 +1236,8 @@ button {
 
 .desk-vase {
   position: absolute;
-  left: calc(50% + 96px);
-  bottom: 320px;
+  left: 76%;
+  bottom: 4px;
   width: 60px;
   height: 86px;
   border: 0;
@@ -1247,6 +1247,7 @@ button {
   z-index: 15;
   opacity: 0.96;
   filter: drop-shadow(0 14px 16px rgba(88, 71, 60, 0.18));
+  transform: translateX(-50%);
   rotate: -0.8deg;
   transform-origin: 50% 100%;
   animation: jasmine-sway 6.8s ease-in-out infinite;
@@ -1254,10 +1255,14 @@ button {
 }
 
 .desk-vase:active {
-  transform: scale(0.96);
+  transform: translateX(-50%) scale(0.96);
 }
 
 .desk>.desk-vase {
+  display: none;
+}
+
+.desk-vase-legacy {
   display: none;
 }
 
@@ -4621,8 +4626,8 @@ button {
   }
 
   .desk-vase {
-    left: calc(50% + -110px);
-    bottom: 55.4%;
+    left: 75%;
+    bottom: 4px;
     width: 52px;
     height: 74px;
   }
