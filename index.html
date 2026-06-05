@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Letter For You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell" id="page-shell">
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+    <div class="grain"></div>
+
+    <button
+      class="music-toggle is-playing"
+      id="music-toggle"
+      type="button"
+      aria-label="关闭背景音乐"
+      aria-pressed="true"
+    >
+      <span class="music-toggle-halo"></span>
+      <svg class="music-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M18 32.5V13.5l16-4v18" />
+        <path d="M18 17.5l16-4" />
+        <ellipse cx="15" cy="33.5" rx="4.5" ry="3.2" />
+        <ellipse cx="31" cy="30.5" rx="4.5" ry="3.2" />
+        <path class="music-wave wave-1" d="M37 16c2.7 1.8 4 4.2 4 7s-1.3 5.2-4 7" />
+        <path class="music-wave wave-2" d="M40.5 12.5c4 3 6 6.5 6 10.5s-2 7.5-6 10.5" />
+      </svg>
+    </button>
+
+    <main class="story-shell">
+      <section class="scene-panel letter-scene" id="scene-letter" aria-live="polite" aria-hidden="false">
+        <p class="intro">轻触启封</p>
+
+        <section class="letter-stage">
+          <button class="envelope" id="envelope" type="button" aria-label="打开信封">
+            <span class="envelope-shadow"></span>
+            <span class="envelope-back"></span>
+            <span class="envelope-paper-preview"></span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-front"></span>
+            <span class="seal">For You</span>
+          </button>
+
+          <article class="letter-card" id="letter-card">
+            <div class="letter-top-glow"></div>
+            <div class="letter-content">
+              <button class="letter-close" id="letter-close" type="button" aria-label="收起信件">×</button>
+              <p class="letter-kicker">展信开颜</p>
+              <h1 class="letter-title">to宁宁</h1>
+
+              <div class="letter-reader" id="letter-reader">
+                <div class="letter-scroll" id="letter-scroll">
+                  <div class="message" id="message" aria-label="信件内容"></div>
+                  <p class="signature" id="signature"></p>
+
+                  <div class="letter-action" id="letter-action">
+                    <button class="peek-button" id="peek-button" type="button">点我 还有惊喜哟</button>
+                  </div>
+                </div>
+
+                <div class="scroll-indicator" aria-hidden="true">
+                  <span class="scroll-thumb" id="scroll-thumb"></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <div class="petals" id="petals" aria-hidden="true"></div>
+      </section>
+
+      <section class="scene-panel room-scene" id="scene-room" aria-live="polite" aria-hidden="true" data-step="lamp">
+        <div class="room-shell">
+          <div class="room-wall-bloom"></div>
+          <div class="room-dimmer"></div>
+          <div class="room-wainscot"></div>
+          <div class="room-floor"></div>
+
+          <div class="room-window" aria-hidden="true">
+            <span class="room-window-frame"></span>
+            <span class="room-window-sky">
+              <span class="room-window-cloud cloud-1"></span>
+              <span class="room-window-cloud cloud-2"></span>
+              <span class="room-window-cloud cloud-3"></span>
+              <span class="shooting-star shooting-star-1"></span>
+              <span class="shooting-star shooting-star-2"></span>
+              <span class="shooting-star shooting-star-3"></span>
+            </span>
+            <span class="room-window-sill"></span>
+          </div>
+
+          <p class="room-prompt" id="room-prompt" role="status">先关灯吧</p>
+
+          <button class="desk-vase" id="jasmine" type="button" aria-label="jasmine">
+            <span class="jasmine-note">我是茉莉花哦~</span>
+            <span class="desk-vase-glass"></span>
+            <span class="desk-vase-water"></span>
+            <span class="jasmine-stem jasmine-stem-main"></span>
+            <span class="jasmine-leaf jasmine-leaf-left"></span>
+            <span class="jasmine-leaf jasmine-leaf-right"></span>
+            <span class="jasmine-bloom"></span>
+            <span class="jasmine-center"></span>
+          </button>
+
+          <div class="lamp">
+            <span class="lamp-cord"></span>
+            <span class="lamp-cap"></span>
+            <span class="lamp-shade">
+              <button class="lamp-bulb-button" id="lamp-bulb-button" type="button" aria-label="点击灯泡关灯">
+                <span class="lamp-bulb"></span>
+              </button>
+            </span>
+          </div>
+          <div class="lamp-light"></div>
+          <div class="room-rug" aria-hidden="true"></div>
+
+          <div class="desk-zone">
+            <div class="desk-shadow"></div>
+            <div class="desk">
+              <div class="desk-top"></div>
+              <div class="desk-front"></div>
+
+              <div class="desk-clock" aria-label="桌面日历">
+                <div class="desk-clock-date" aria-hidden="true">
+                  <span class="desk-clock-month">JUN</span>
+                  <span class="desk-clock-day">7</span>
+                  <span class="desk-clock-date-text">6月7号</span>
+                </div>
+              </div>
+
+              <div class="cake">
+                <div class="cake-plate"></div>
+                <div class="cake-bottom"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-top"></div>
+                <div class="cake-cherry" aria-hidden="true">
+                  <span class="cake-cherry-leaf"></span>
+                </div>
+
+                <button class="candle-button" id="candle-button" type="button" aria-label="点亮蜡烛">
+                  <span class="candle-stick"></span>
+                  <span class="candle-wick"></span>
+                  <span class="candle-flame"></span>
+                  <span class="candle-glow"></span>
+                </button>
+
+                <div class="birthday-finale" id="birthday-finale" aria-hidden="true">
+                  <span class="birthday-finale-text">宁，<br>永葆青春</span>
+                </div>
+              </div>
+
+              <button class="gift-box" id="gift-box-toggle" type="button" aria-label="打开礼物盒">
+                <span class="gift-lid"></span>
+                <span class="gift-ribbon gift-ribbon-x"></span>
+                <span class="gift-ribbon gift-ribbon-y"></span>
+                <span class="gift-bow"></span>
+              </button>
+
+              <button class="desk-vase" id="jasmine" type="button" aria-label="点击茉莉花">
+                <span class="jasmine-note">这是你最喜欢的茉莉</span>
+                <span class="desk-vase-glass"></span>
+                <span class="desk-vase-water"></span>
+                <span class="jasmine-stem jasmine-stem-main"></span>
+                <span class="jasmine-leaf jasmine-leaf-left"></span>
+                <span class="jasmine-leaf jasmine-leaf-right"></span>
+                <span class="jasmine-bloom"></span>
+                <span class="jasmine-center"></span>
+              </button>
+
+              <button class="desk-letter" id="desk-letter-toggle" type="button" aria-label="查看信件">
+                <span class="desk-letter-paper"></span>
+                <span class="desk-letter-seal"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="gift-modal" id="gift-modal" aria-hidden="true">
+            <button class="gift-showcase" id="gift-showcase" type="button" aria-label="点击礼物盒关上">
+              <span class="gift-showcase-halo"></span>
+              <span class="gift-showcase-lid"></span>
+              <span class="gift-showcase-base"></span>
+              <span class="gift-showcase-interior"></span>
+              <span class="gift-showcase-glow"></span>
+              <span class="gift-cushion"></span>
+              <span class="gift-showcase-ribbon gift-showcase-ribbon-x"></span>
+              <span class="gift-showcase-ribbon gift-showcase-ribbon-y"></span>
+              <span class="gift-showcase-knot"></span>
+
+              <div class="gift-watch" aria-hidden="true">
+                <span class="watch-shadow"></span>
+                <span class="watch-strap watch-strap-top">
+                  <span class="watch-strap-stitch"></span>
+                </span>
+                <span class="watch-lug watch-lug-top"></span>
+                <div class="watch-dial">
+                  <span class="watch-dial-glass"></span>
+                  <span class="watch-crown"></span>
+                  <span class="watch-brand">LOLA ROSE</span>
+                  <span class="watch-brand-sub">LONDON</span>
+                  <span class="watch-marker watch-marker-top"></span>
+                  <span class="watch-marker watch-marker-right"></span>
+                  <span class="watch-marker watch-marker-bottom"></span>
+                  <span class="watch-marker watch-marker-left"></span>
+                  <span class="watch-center"></span>
+                  <span class="watch-hand watch-hand-hour" id="watch-hand-hour"></span>
+                  <span class="watch-hand watch-hand-minute" id="watch-hand-minute"></span>
+                  <span class="watch-hand watch-hand-second" id="watch-hand-second"></span>
+                </div>
+                <span class="watch-strap watch-strap-bottom">
+                  <span class="watch-lug watch-lug-bottom"></span>
+                  <span class="watch-strap-stitch"></span>
+                </span>
+              </div>
+            </button>
+            <p class="gift-prompt" id="gift-prompt" role="status">打开它吧</p>
+          </div>
+
+          <canvas class="confetti-canvas" id="confetti-canvas"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <p class="credit">Made by 景轩 · 2026</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
